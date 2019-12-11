@@ -1,0 +1,9 @@
+Package: it.ned.outofsight
+Name: OutOfSight
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Fix various iOS 13 annoyances: system wide black keyboard, hide 'No older notifications' text, hide DND notification, Hide 'Press home to open', hide page dots in lockscreen
+Maintainer: ned
+Author: ned
+Section: Tweaks

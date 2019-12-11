@@ -1,0 +1,4 @@
+.DS_Store
+tweaks/*/packages/*.deb
+tweaks/*/.theos
+tweaks/*/*.app

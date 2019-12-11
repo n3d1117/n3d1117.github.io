@@ -1,0 +1,9 @@
+Package: it.ned.infuse6++
+Name: Infuse6++
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Unlock Infuse 6 premium features
+Maintainer: ned
+Author: ned
+Section: Tweaks

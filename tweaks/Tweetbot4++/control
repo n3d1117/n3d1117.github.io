@@ -1,0 +1,9 @@
+Package: it.ned.tweetbot4tip
+Name: Tweetbot4++
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Unlock Tweetbot 4 additional themes
+Maintainer: ned
+Author: ned
+Section: Tweaks

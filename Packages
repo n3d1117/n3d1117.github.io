@@ -1,0 +1,128 @@
+Package: it.ned.futbin++
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.futbin++_0.0.1_iphoneos-arm.deb
+Size: 3824
+MD5sum: 8559be6271cbd08dbb4b0a0e3fda1a95
+SHA1: 3dcdb0d4136ffcb270f66039318eac70e221ad53
+SHA256: 868f01c01cdb4f705ce24bcd7d9d3ed2d2314254de5164466ca38f8c90788b6e
+Section: Tweaks
+Description: Remove Futbin's annoying ads
+Author: ned
+Name: Futbin++
+
+Package: it.ned.futbin++
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.futbin++_0.0.2_iphoneos-arm.deb
+Size: 5100
+MD5sum: 7d019e37f84f90888243d4ff40b78ec5
+SHA1: 50ab80d2a48f7e33b5ba2cf126511fed3b16c4de
+SHA256: 25775bd17f502f559f4d75d95cab528ae57b5688da6f411f2e4f6257556d851f
+Section: Tweaks
+Description: Remove Futbin's annoying ads
+Author: ned
+Name: Futbin++
+
+Package: it.ned.infuse6++
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.infuse6++_0.0.1_iphoneos-arm.deb
+Size: 3638
+MD5sum: e0e20e018654d158d99d66bcf20e3dc7
+SHA1: af61b04816df81b20c41447eba8fa3c632c60466
+SHA256: dcfe83bd0269ac3107439f7fc99f95acf27b32b753377612c9700492632122a7
+Section: Tweaks
+Description: Unlock Infuse 6 premium features
+Author: ned
+Name: Infuse6++
+
+Package: it.ned.leghefantacalcio++
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.leghefantacalcio++_0.0.1_iphoneos-arm.deb
+Size: 4942
+MD5sum: 6c0126decfe154b4f19a7c6877a61d14
+SHA1: 7c055756da2645b97a3d99fa5e2cb7638da96d9f
+SHA256: 5dacaa31b0cba8409f17ed4508dd5a4e0c7e664aa1f37eb58a35a3e01c424cd3
+Section: Tweaks
+Description: Removes ads and unlocks a few premium features in Leghe Fantacalcio
+Author: ned
+Name: LegheFantacalcio++
+
+Package: it.ned.noappthinning
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 104
+Depends: firmware (>= 11.0), mobilesubstrate
+Filename: ./debs/it.ned.noappthinning_1.0_iphoneos-arm.deb
+Size: 2832
+MD5sum: f96e27253e8c0d1cae6209f821352e11
+SHA1: ff324117a8f67c4feb3927b6090a66ede8a3b07c
+SHA256: e256615e988db51f679d8bea9d6867bf4ebcca8d579e3fc28d14942de4ad72eb
+Section: Tweaks
+Description: Disable AppStore app thinning (iOS 11+)
+Author: ned
+Name: NoAppThinning
+
+Package: it.ned.outofsight
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.outofsight_0.0.1_iphoneos-arm.deb
+Size: 3482
+MD5sum: 6c5e2161c8a058a04c30fbd661fb9314
+SHA1: 157626f30e781e8bf61ced791aaead0a1bb57715
+SHA256: 9706644a7f5735b1bfe39661f345d043bb1f1e31bb222d20c9661767160d4811
+Section: Tweaks
+Description: Fix various iOS 13 annoyances: system wide black keyboard, hide 'No older notifications' text, hide DND notification, Hide 'Press home to open', hide page dots in lockscreen
+Author: ned
+Name: OutOfSight
+
+Package: it.ned.slimshady
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 72
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.slimshady_0.0.1_iphoneos-arm.deb
+Size: 3686
+MD5sum: 887c1d57a0f0bd463361a932fc5bc780
+SHA1: 47484345f0b80b3eca77448b39ae4989ebe1daea
+SHA256: d88fdc642b360e5936213743eb522b8199a1ebe64047de2d1afd01dbc3f98178
+Section: Tweaks
+Description: Useful iPad modern status bar w/ network info
+Author: ned
+Name: SlimShady
+
+Package: it.ned.tweetbot4tip
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.tweetbot4tip_0.0.1_iphoneos-arm.deb
+Size: 2850
+MD5sum: 2d17c7988b8e14c9a4d58e73c451d4d5
+SHA1: ba5d9e507e36e7829d7baf4800f49f00f3e688fb
+SHA256: d24706d0b9b46672460855cce1017b199dc3cd11dcbc7e48e368bae0dcc00eae
+Section: Tweaks
+Description: Unlock Tweetbot 4 additional themes
+Author: ned
+Name: Tweetbot4++
+

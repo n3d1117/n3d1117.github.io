@@ -1,0 +1,9 @@
+Package: it.ned.futbin++
+Name: Futbin++
+Depends: mobilesubstrate
+Version: 0.0.2
+Architecture: iphoneos-arm
+Description: Remove Futbin's annoying ads
+Maintainer: ned
+Author: ned
+Section: Tweaks
