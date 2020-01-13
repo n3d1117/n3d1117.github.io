@@ -30,6 +30,22 @@ Description: Remove Futbin's annoying ads
 Author: ned
 Name: Futbin++
 
+Package: it.ned.futbin++
+Version: 0.0.3
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.futbin++_0.0.3_iphoneos-arm.deb
+Size: 8708
+MD5sum: 172fe937746c86ca74b922cd7b505cdc
+SHA1: 278a00f2e482ff5ee9ef6c3428afecc4b6a76163
+SHA256: ef410f83264b2cf1c895891c19b4ab68ca4e5763523609efa5379e748f23e506
+Section: Tweaks
+Description: Remove Futbin's annoying ads, enable dark mode
+Author: ned
+Name: Futbin++
+
 Package: it.ned.infuse6++
 Version: 0.0.1
 Architecture: iphoneos-arm
