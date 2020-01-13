@@ -56,8 +56,25 @@
 -(id)initWithSdk:(id)arg2 currentAd:(id)arg3 currentPlacement:(id)arg4 wrapper:(id)arg5 { return nil; }
 %end
 
+%hook ALLeftMenuViewController
+-(void)switchMode:(id)sender {
+	if (@available(iOS 13.0, *)) {
+		UIWindow * window = [[[UIApplication sharedApplication] windows] firstObject];
+		if ([(UISwitch*)sender isOn]) {
+			window.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isDarkMode"];
+		} else {
+			window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+			[[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"isDarkMode"];
+		}
+	} else {
+		%orig;
+	}
+}
+%end
+
 %ctor {
 	@autoreleasepool {
-		%init(ALRootViewController = NSClassFromString(@"Futbin.ALRootViewController"));
+		%init(ALRootViewController = NSClassFromString(@"Futbin.ALRootViewController"), ALLeftMenuViewController = NSClassFromString(@"Futbin.ALLeftMenuViewController"));
 	}
 }
