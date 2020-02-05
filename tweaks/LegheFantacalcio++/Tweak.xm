@@ -1,7 +1,7 @@
 
 /* HIDE ADS */
 
-%hook GADAd 
+/*%hook GADAd 
 - (id)init { return nil; }
 %end
 
@@ -19,6 +19,12 @@
 
 %hook GADInterstitial 
 - (id)init { return nil; }
+%end*/
+
+%hook GADAdSource
+- (BOOL)invalidated {
+	return 1;
+}
 %end
 
 %hook AdsBannerView

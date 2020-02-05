@@ -28,7 +28,7 @@
 }
 %end
 
-%hook GADAd 
+/*%hook GADAd 
 - (id)init { return nil; }
 %end
 
@@ -54,6 +54,12 @@
 
 %hook ALVASTVideoViewController
 -(id)initWithSdk:(id)arg2 currentAd:(id)arg3 currentPlacement:(id)arg4 wrapper:(id)arg5 { return nil; }
+%end*/
+
+%hook GADAdSource
+- (BOOL)invalidated {
+	return 1;
+}
 %end
 
 %hook ALLeftMenuViewController

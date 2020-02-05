@@ -1,7 +1,7 @@
 Package: it.ned.leghefantacalcio++
 Name: LegheFantacalcio++
 Depends: mobilesubstrate
-Version: 0.0.1
+Version: 0.0.2
 Architecture: iphoneos-arm
 Description: Removes ads and unlocks a few premium features in Leghe Fantacalcio
 Maintainer: ned

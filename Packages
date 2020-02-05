@@ -46,6 +46,22 @@ Description: Remove Futbin's annoying ads, enable dark mode
 Author: ned
 Name: Futbin++
 
+Package: it.ned.futbin++
+Version: 0.0.4
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.futbin++_0.0.4_iphoneos-arm.deb
+Size: 8292
+MD5sum: d7e0f28799d7233f8737b0f509724f3a
+SHA1: 82a397c78bfaddc4f9ee03920a10d930c7175076
+SHA256: 0ad6adbd1b490543b1ec888ac2a87479f365a2a50e3b8b82a6701acc5b201017
+Section: Tweaks
+Description: Remove Futbin's annoying ads, enable dark mode
+Author: ned
+Name: Futbin++
+
 Package: it.ned.infuse6++
 Version: 0.0.1
 Architecture: iphoneos-arm
@@ -73,6 +89,22 @@ Size: 4942
 MD5sum: 6c0126decfe154b4f19a7c6877a61d14
 SHA1: 7c055756da2645b97a3d99fa5e2cb7638da96d9f
 SHA256: 5dacaa31b0cba8409f17ed4508dd5a4e0c7e664aa1f37eb58a35a3e01c424cd3
+Section: Tweaks
+Description: Removes ads and unlocks a few premium features in Leghe Fantacalcio
+Author: ned
+Name: LegheFantacalcio++
+
+Package: it.ned.leghefantacalcio++
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.leghefantacalcio++_0.0.2_iphoneos-arm.deb
+Size: 4724
+MD5sum: 8c6113e97ea6822f8eed7938a1d439fe
+SHA1: 9e006367fb838c3d46d2bc1145adb2f25193e4b5
+SHA256: 7bf1b11d595190ec8a82666ddc09a023a9dca9b6c654795dbcdd2a3e3897b4f3
 Section: Tweaks
 Description: Removes ads and unlocks a few premium features in Leghe Fantacalcio
 Author: ned
