@@ -142,6 +142,22 @@ Description: Fix various iOS 13 annoyances: system wide black keyboard, hide 'No
 Author: ned
 Name: OutOfSight
 
+Package: it.ned.outofsight
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.outofsight_0.0.2_iphoneos-arm.deb
+Size: 5588
+MD5sum: f012cd30305b4355c9772d75230ddf6e
+SHA1: 86e803e10bc733b735132a6baafd9b9deb70cd4b
+SHA256: 2652cf9333a3f84a19d0b818bbc0f5e6ce391a29f88c8906870ba443db6d46bb
+Section: Tweaks
+Description: Fix various iOS 13 annoyances: system wide black keyboard, hide 'No older notifications' text, hide DND notification, Hide 'Press home to open' / 'Swipe up to open', hide page dots in lockscreen, show battery percentage on iPhone X/11, hide control center grabber in LS, disable Today view in NC/LS, hide camer/flashlight in LS, hide home grabber in LS
+Author: ned
+Name: OutOfSight
+
 Package: it.ned.slimshady
 Version: 0.0.1
 Architecture: iphoneos-arm
