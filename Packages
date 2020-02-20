@@ -158,6 +158,38 @@ Description: Fix various iOS 13 annoyances: system wide black keyboard, hide 'No
 Author: ned
 Name: OutOfSight
 
+Package: it.ned.outofsight
+Version: 0.0.3
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.outofsight_0.0.3_iphoneos-arm.deb
+Size: 5740
+MD5sum: 7002b7ad4ae8c27d73b2a2c9a7f95e75
+SHA1: 9a198fdd9a6f3004f4aa7cc280a04138bd63f387
+SHA256: d4701425544eb022583a2a9e242c6b7392a05ecc576797f5bbc77e5bb68f55d6
+Section: Tweaks
+Description: Fix various iOS 13 annoyances: system wide black keyboard, hide 'No older notifications' text, hide DND notification, Hide 'Press home to open' / 'Swipe up to open', hide page dots in lockscreen, show battery percentage on iPhone X/11, hide control center grabber in LS, disable Today view in NC/LS, hide camer/flashlight in LS, hide home grabber in LS, hide status bar breadcrumbs
+Author: ned
+Name: OutOfSight
+
+Package: it.ned.runaway
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.runaway_0.0.1_iphoneos-arm.deb
+Size: 9976
+MD5sum: 3a4d2672cf4691fc663992048dfcd7da
+SHA1: 3d0d1f3b1a8074f08d94cc5c8326578e0b600dbc
+SHA256: 25a7bcf9952092314438e36e8a35578ac7d75e3009e3e3b78fa48721dde79d6b
+Section: Tweaks
+Description: Show network speed under time (iOS 13, iPhone w/ notch only)
+Author: ned
+Name: Runaway
+
 Package: it.ned.slimshady
 Version: 0.0.1
 Architecture: iphoneos-arm
