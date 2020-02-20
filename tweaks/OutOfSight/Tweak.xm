@@ -3,10 +3,6 @@
 -(void)setLightKeyboard:(BOOL)arg1 { %orig(FALSE); }
 %end
 
-%hook UIDevice
--(long long)_keyboardGraphicsQuality { return 10; }
-%end
-
 /* Hide 'No Older Notifications' from lockscreen */
 %hook NCNotificationListSectionRevealHintView
 -(void)_layoutRevealHintTitle {}
@@ -27,7 +23,7 @@
 -(void)_setIndicatorImage:(id)arg1 toEnabled:(BOOL)arg2 index:(NSInteger)arg3 {}
 %end
 
-/* iPhone: battery percentage (by sarah) */
+/* iPhone: show battery percentage (by sarah) */
 %hook _UIBatteryView 
 -(void)setShowsPercentage:(BOOL)arg1 { %orig(TRUE); }
 %end 
@@ -63,3 +59,13 @@
 %hook MTStaticColorPillView
 -(void)setPillColor:(UIColor *)arg { %orig([UIColor clearColor]); }
 %end
+
+/* Hide status bar breadcrumbs */
+%hook SBDeviceApplicationSceneStatusBarBreadcrumbProvider
++(bool)_shouldAddBreadcrumbToActivatingSceneEntity:(id)arg1 sceneHandle:(id)arg2 withTransitionContext:(id)arg3 { return FALSE; }
+%end
+
+/* Hide carrier */
+//%hook _UIStatusBarDataCellularEntry
+//-(void)setString:(NSString*)text { %orig(@""); }
+//%end
