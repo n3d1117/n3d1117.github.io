@@ -71,30 +71,16 @@ static NSAttributedString* cachedAttributedString;
 static NSDictionary* attributes1;
 static NSDictionary* attributes2;
 static NSDateFormatter* dateFormatter;
-static NSDateFormatter* df;
 static long oldSpeed;
 
 static NSMutableAttributedString* formattedAttributedString() {
 	NSMutableAttributedString* attributedString = [[NSMutableAttributedString alloc] init];
 	
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateStyle:NSDateFormatterNoStyle];
-	[dateFormatter setTimeStyle:NSDateFormatterLongStyle];
-	if([[dateFormatter dateFormat] rangeOfString:@"a"].location != NSNotFound) {
-		NSDateFormatter *df = [[NSDateFormatter alloc] init];
-		[df setDateFormat:@"h:mm"];
-		NSString* date = [df stringFromDate: [NSDate date]];
-		date = [date stringByAppendingString: @"\n"];
-		NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
-		[attributedString appendAttributedString: first];
-	} else {
-		NSDateFormatter *df = [[NSDateFormatter alloc] init];
-		[df setDateFormat:@"HH:mm"];
-		NSString* date = [df stringFromDate: [NSDate date]];
-		date = [date stringByAppendingString: @"\n"];
-		NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
-		[attributedString appendAttributedString: first];
-	}
+	// Time
+	NSString* date = [dateFormatter stringFromDate: [NSDate date]];
+	date = [date stringByAppendingString:@"\n"];
+	NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
+	[attributedString appendAttributedString: first];
 	
 	// Speed
 	long nowData = getBytesTotal();
@@ -114,7 +100,6 @@ static NSMutableAttributedString* formattedAttributedString() {
 @interface _UIStatusBarStringView: UILabel
 @property (nonatomic) NSInteger numberOfLines;
 @property (nonatomic) NSTextAlignment textAlignment;
-@property(nonatomic) BOOL adjustsFontSizeToFitWidth;
 @property (nullable, nonatomic, copy) NSAttributedString* attributedText;
 -(void)setText:(NSString*)arg1;
 @end
@@ -134,7 +119,6 @@ static NSMutableAttributedString* formattedAttributedString() {
 	self.textAlignment = NSTextAlignmentCenter;
 	[NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer*timer) {
 		if (isDeviceUnlocked && self && self.window != nil && [self.text containsString: @":"]) {
-			self.adjustsFontSizeToFitWidth = NO;
 			self.attributedText = cachedAttributedString;
 		}
 	}];
@@ -143,7 +127,6 @@ static NSMutableAttributedString* formattedAttributedString() {
 
 - (void)setText:(NSString*)text {
 	if ([text containsString:@":"]) {
-		self.adjustsFontSizeToFitWidth = NO;
 		self.attributedText = cachedAttributedString;
 	} else {
 		%orig(text);
@@ -187,11 +170,22 @@ static NSMutableAttributedString* formattedAttributedString() {
 
 // ___________________________________________________________________________________
 
+static BOOL has12HourClock() {
+	NSDateFormatter *df = [[NSDateFormatter alloc] init];
+	[df setDateStyle:NSDateFormatterNoStyle];
+	[df setTimeStyle:NSDateFormatterLongStyle];
+	return [[df dateFormat] rangeOfString:@"a"].location != NSNotFound;
+}
+
 %ctor {
 	@autoreleasepool {
 
 		dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setDateFormat:@"HH:mm"];
+		if (has12HourClock()) {
+			[dateFormatter setDateFormat:@"h:mm"];
+		} else {
+			[dateFormatter setDateFormat:@"HH:mm"];
+		}
 		
 		attributes1 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 13] };
 		attributes2 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 9] };
