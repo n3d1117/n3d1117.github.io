@@ -88,7 +88,7 @@ static NSMutableAttributedString* formattedAttributedString() {
 		NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
 		[attributedString appendAttributedString: first];
 	} else {
-    	NSDateFormatter *df = [[NSDateFormatter alloc] init];
+		NSDateFormatter *df = [[NSDateFormatter alloc] init];
 		[df setDateFormat:@"HH:mm"];
 		NSString* date = [df stringFromDate: [NSDate date]];
 		date = [date stringByAppendingString: @"\n"];
