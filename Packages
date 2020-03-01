@@ -190,6 +190,22 @@ Description: Show network speed under time (iOS 13, iPhone w/ notch only)
 Author: ned
 Name: Runaway
 
+Package: it.ned.runaway
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 200
+Depends: mobilesubstrate
+Filename: ./debs/it.ned.runaway_0.0.2_iphoneos-arm.deb
+Size: 10210
+MD5sum: 795879bc4f602d4cb7f2391cd6c0b09d
+SHA1: 5a65bc59cb591a0807e93e3cefe682d85e512d8e
+SHA256: a796151f6cd6d70c02ca1872ad7b1e967dd2de00665ff130f6e83e37e54d72d6
+Section: Tweaks
+Description: Show network speed under time (iOS 13, iPhone w/ notch only)
+Author: ned
+Name: Runaway
+
 Package: it.ned.slimshady
 Version: 0.0.1
 Architecture: iphoneos-arm
