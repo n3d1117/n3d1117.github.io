@@ -71,16 +71,30 @@ static NSAttributedString* cachedAttributedString;
 static NSDictionary* attributes1;
 static NSDictionary* attributes2;
 static NSDateFormatter* dateFormatter;
+static NSDateFormatter* df;
 static long oldSpeed;
 
 static NSMutableAttributedString* formattedAttributedString() {
 	NSMutableAttributedString* attributedString = [[NSMutableAttributedString alloc] init];
 	
-	// HH:mm
-	NSString* date = [dateFormatter stringFromDate: [NSDate date]];
-	date = [date stringByAppendingString: @"\n"];
-	NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
-	[attributedString appendAttributedString: first];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateStyle:NSDateFormatterNoStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterLongStyle];
+	if([[dateFormatter dateFormat] rangeOfString:@"a"].location != NSNotFound) {
+		NSDateFormatter *df = [[NSDateFormatter alloc] init];
+		[df setDateFormat:@"h:mm"];
+		NSString* date = [df stringFromDate: [NSDate date]];
+		date = [date stringByAppendingString: @"\n"];
+		NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
+		[attributedString appendAttributedString: first];
+	} else {
+		NSDateFormatter *df = [[NSDateFormatter alloc] init];
+		[df setDateFormat:@"HH:mm"];
+		NSString* date = [df stringFromDate: [NSDate date]];
+		date = [date stringByAppendingString: @"\n"];
+		NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
+		[attributedString appendAttributedString: first];
+	}
 	
 	// Speed
 	long nowData = getBytesTotal();
