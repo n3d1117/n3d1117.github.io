@@ -1,9 +1,9 @@
 Package: it.ned.runaway
 Name: Runaway
-Depends: mobilesubstrate
-Version: 0.0.3
+Depends: mobilesubstrate, firmware (>= 13.0), preferenceloader
+Version: 0.0.4
 Architecture: iphoneos-arm
-Description: Show network speed under time (iOS 13, iPhone w/ notch only)
+Description: Show network speed under (or beside) time and can add seconds to the clock (iOS 13 only).
 Maintainer: ned
 Author: ned
 Section: Tweaks

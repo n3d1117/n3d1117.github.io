@@ -5,6 +5,9 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = Runaway
 Runaway_FILES = Tweak.xm
 Runaway_CFLAGS = -fobjc-arc
-ARCHS = armv7 arm64 arm64e
+ARCHS = arm64 arm64e
+export TARGET = iphone:clang:latest:12.0
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+SUBPROJECTS += runawayprefs
+include $(THEOS_MAKE_PATH)/aggregate.mk

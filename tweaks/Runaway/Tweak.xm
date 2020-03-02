@@ -1,7 +1,23 @@
+#import <LocalAuthentication/LocalAuthentication.h>
 #import <ifaddrs.h>
 #import <net/if.h>
 
+BOOL wantsAddSecondsToClock;
+
 // ___________________________________________________________________________________
+
+static BOOL hasDeviceNotch()
+{
+    if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
+        return NO;
+    }
+    else {
+        LAContext* context = [[LAContext alloc] init];
+        [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil];
+                             
+        return [context biometryType] == LABiometryTypeFaceID;
+    }
+}
 
 /* NETWORK SPEED (by julioverne) */
 
@@ -77,10 +93,18 @@ static NSMutableAttributedString* formattedAttributedString() {
 	NSMutableAttributedString* attributedString = [[NSMutableAttributedString alloc] init];
 	
 	// Time
-	NSString* date = [dateFormatter stringFromDate: [NSDate date]];
-	date = [date stringByAppendingString:@"\n"];
-	NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
-	[attributedString appendAttributedString: first];
+    if (hasDeviceNotch()) {
+        NSString* date = [dateFormatter stringFromDate: [NSDate date]];
+		date = [date stringByAppendingString:@"\n"];
+		NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
+		[attributedString appendAttributedString: first];
+    }
+	else {
+		NSString* date = [dateFormatter stringFromDate: [NSDate date]];
+		date = [date stringByAppendingString:@" "];
+		NSAttributedString* first = [[NSAttributedString alloc] initWithString:date attributes:attributes1];
+		[attributedString appendAttributedString: first];
+	}
 	
 	// Speed
 	long nowData = getBytesTotal();
@@ -115,7 +139,12 @@ static NSMutableAttributedString* formattedAttributedString() {
 
 -(id)initWithFrame:(CGRect)arg1 {
 	%orig;
-	self.numberOfLines	= 2;
+    if (hasDeviceNotch()) {
+        self.numberOfLines = 2;
+    }
+	else {
+		self.numberOfLines = 1;
+	}
 	self.textAlignment = NSTextAlignmentCenter;
 	[NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer*timer) {
 		if (isDeviceUnlocked && self && self.window != nil && [self.text containsString: @":"]) {
@@ -181,18 +210,52 @@ static BOOL has24HourClock() {
 	return (amRange.location == NSNotFound && pmRange.location == NSNotFound);
 }
 
+void loadPrefs() {
+	NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/var/mobile/Library/Preferences/net.sarahh12099.runawayprefs.plist"];
+	if (prefs) {
+        wantsAddSecondsToClock = [[prefs objectForKey:@"AddSecondsToClock"] boolValue];
+	}
+}
+
+void initPrefs() {
+	NSString *path = @"/User/Library/Preferences/net.sarahh12099.runawayprefs.plist";
+	NSString *pathDefault = @"/Library/PreferenceBundles/runawayprefs.bundle/defaults.plist";
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	if (![fileManager fileExistsAtPath:path]) {
+		[fileManager copyItemAtPath:pathDefault toPath:path error:nil];
+	}
+}
+
 %ctor {
 	@autoreleasepool {
+		CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("net.sarahh12099.runawayprefs/prefsupdated"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+		initPrefs();
+	    loadPrefs();
 
 		dateFormatter = [[NSDateFormatter alloc] init];
 		if (has24HourClock()) {
-			[dateFormatter setDateFormat:@"HH:mm"];
+			if (wantsAddSecondsToClock) {
+				[dateFormatter setDateFormat:@"HH:mm:ss"];
+			} else {
+				[dateFormatter setDateFormat:@"HH:mm"];
+			}
 		} else {
-			[dateFormatter setDateFormat:@"h:mm"];
+			if (wantsAddSecondsToClock) {
+				[dateFormatter setDateFormat:@"h:mm:ss"];
+			}
+			else {
+				[dateFormatter setDateFormat:@"h:mm"];
+			}
 		}
-		
-		attributes1 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 13] };
-		attributes2 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 9] };
+
+		if (hasDeviceNotch()) {
+			attributes1 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 13] };
+			attributes2 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 9] };
+    	}
+		else {
+			attributes1 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 13] };
+			attributes2 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 12] };
+		}
 		
 		cachedAttributedString = formattedAttributedString();
 		
