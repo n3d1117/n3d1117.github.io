@@ -170,21 +170,25 @@ static NSMutableAttributedString* formattedAttributedString() {
 
 // ___________________________________________________________________________________
 
-static BOOL has12HourClock() {
+static BOOL has24HourClock() {
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
+	[df setLocale:[NSLocale currentLocale]];
 	[df setDateStyle:NSDateFormatterNoStyle];
-	[df setTimeStyle:NSDateFormatterLongStyle];
-	return [[df dateFormat] rangeOfString:@"a"].location != NSNotFound;
+	[df setTimeStyle:NSDateFormatterShortStyle];
+	NSString *dateString = [df stringFromDate:[NSDate date]];
+	NSRange amRange = [dateString rangeOfString:[df AMSymbol]];
+	NSRange pmRange = [dateString rangeOfString:[df PMSymbol]];
+	return (amRange.location == NSNotFound && pmRange.location == NSNotFound);
 }
 
 %ctor {
 	@autoreleasepool {
 
 		dateFormatter = [[NSDateFormatter alloc] init];
-		if (has12HourClock()) {
-			[dateFormatter setDateFormat:@"h:mm"];
-		} else {
+		if (has24HourClock()) {
 			[dateFormatter setDateFormat:@"HH:mm"];
+		} else {
+			[dateFormatter setDateFormat:@"h:mm"];
 		}
 		
 		attributes1 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: 13] };
