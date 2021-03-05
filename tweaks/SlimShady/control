@@ -1,0 +1,9 @@
+Package: it.ned.slimshady
+Name: SlimShady
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Useful iPad modern status bar w/ network info
+Maintainer: ned
+Author: ned
+Section: Tweaks

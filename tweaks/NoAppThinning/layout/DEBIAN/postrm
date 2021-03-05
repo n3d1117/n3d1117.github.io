@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Reloading services..."
+launchctl kickstart -k system/com.apple.itunesstored
+echo "Reloaded services."
+exit 0

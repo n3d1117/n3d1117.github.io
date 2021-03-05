@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TweakEnabled</key>
+	<true/>
+	<key>AddSecondsToClock</key>
+	<false/>
+	<key>ShowBytes</key>
+	<false/>
+	<key>HideWhenEmpty</key>
+	<false/>
+	<key>HideBreadcrumbs</key>
+	<false/>
+	<key>UsesMonospacedFont</key>
+	<false/>
+	<key>ShowArrows</key>
+	<false/>
+	<key>SeparatedUpDown</key>
+	<false/>	
+	<key>DownloadFirst</key>
+	<false/>
+	<key>FontSize1</key>
+	<integer>13</integer>
+	<key>FontSize2</key>
+	<integer>9</integer>
+	<key>RefreshInterval</key>
+	<real>1</real>
+</dict>
+</plist>

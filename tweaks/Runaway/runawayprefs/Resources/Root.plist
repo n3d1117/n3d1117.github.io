@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Runaway (0.0.4)</string>
+			<key>footerText</key>
+			<string>Thanks to @SarahH12099</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>TweakEnabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>options</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>AddSecondsToClock</string>
+			<key>label</key>
+			<string>Show seconds in clock</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>ShowBytes</string>
+			<key>label</key>
+			<string>Show bytes</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>HideWhenEmpty</string>
+			<key>label</key>
+			<string>Hide speed if zero</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>HideBreadcrumbs</string>
+			<key>label</key>
+			<string>Hide status bar breadcrumbs</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>UsesMonospacedFont</string>
+			<key>label</key>
+			<string>Speed uses monospaced font</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>ShowArrows</string>
+			<key>label</key>
+			<string>Show arrow symbols</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Separate upload/download</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>SeparatedUpDown</string>
+			<key>label</key>
+			<string>Separate upload/download</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>DownloadFirst</string>
+			<key>label</key>
+			<string>Show download first</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Font size (time)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>13</real>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>FontSize1</string>
+			<key>label</key>
+			<string>Time Font Size</string>
+			<key>max</key>
+			<real>17</real>
+			<key>min</key>
+			<real>9</real>
+			<key>showValue</key>
+			<true/>
+			<key>isSegmented</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Font size (speed)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>9</real>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>FontSize2</string>
+			<key>label</key>
+			<string>Speed Font Size</string>
+			<key>max</key>
+			<real>13</real>
+			<key>min</key>
+			<real>5</real>
+			<key>showValue</key>
+			<true/>
+			<key>isSegmented</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Refresh Interval (seconds)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>1</real>
+			<key>defaults</key>
+			<string>net.sarahh12099.runawayprefs</string>
+			<key>key</key>
+			<string>RefreshInterval</string>
+			<key>label</key>
+			<string>Eefresh interval</string>
+			<key>max</key>
+			<real>5</real>
+			<key>min</key>
+			<real>0.5</real>
+			<key>showValue</key>
+			<true/>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>Runaway</string>
+</dict>
+</plist>

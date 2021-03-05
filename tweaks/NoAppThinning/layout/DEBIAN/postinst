@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "Reloading services..."
+launchctl unload /System/Library/LaunchDaemons/com.apple.appstored.plist
+launchctl unload /System/Library/LaunchDaemons/com.apple.itunesstored.plist
+sleep 1
+launchctl load /System/Library/LaunchDaemons/com.apple.appstored.plist
+launchctl load /System/Library/LaunchDaemons/com.apple.itunesstored.plist
+echo "Reloaded services."
+exit 0

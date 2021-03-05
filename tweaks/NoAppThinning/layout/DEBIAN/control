@@ -1,0 +1,10 @@
+Package: it.ned.noappthinning
+Name: NoAppThinning
+Version: 1.0
+Description: Disable AppStore app thinning (iOS 11+)
+Section: Tweaks
+Depends: firmware (>= 11.0), mobilesubstrate
+Architecture: iphoneos-arm
+Author: ned
+Maintainer: ned
+

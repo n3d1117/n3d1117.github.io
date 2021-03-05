@@ -1,0 +1,8 @@
+Origin: n3d1117's Cydia repo
+Label: n3d1117's Cydia repo
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: n3d1117's Cydia repo

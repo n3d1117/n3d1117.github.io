@@ -1,0 +1,9 @@
+Package: it.ned.outofsight
+Name: OutOfSight
+Depends: mobilesubstrate
+Version: 0.0.3
+Architecture: iphoneos-arm
+Description: Fix various iOS 13 annoyances: system wide black keyboard, hide 'No older notifications' text, hide DND notification, Hide 'Press home to open' / 'Swipe up to open', hide page dots in lockscreen, show battery percentage on iPhone X/11, hide control center grabber in LS, disable Today view in NC/LS, hide camera/flashlight in LS, hide home grabber in LS, hide status bar breadcrumbs
+Maintainer: ned
+Author: ned
+Section: Tweaks

@@ -1,0 +1,12 @@
+.DS_Store
+tweaks/*/packages/*.deb
+tweaks/*/.theos
+tweaks/*/*.app
+.nova
+/tweaks/RunawayLite
+/tweaks/iAPParty
+/tweaks/Carrot5++
+/tweaks/Infuse6++
+/tweaks/Tweetbot4++
+/tweaks/Futbin++
+/tweaks/LegheFantacalcio++
