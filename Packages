@@ -270,6 +270,22 @@ Description: Show network speed in status bar (iOS 13+ only).
 Author: ned
 Name: Runaway
 
+Package: it.ned.runaway
+Version: 0.0.5
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 356
+Depends: mobilesubstrate, firmware (>= 13.0), preferenceloader
+Filename: ./debs/it.ned.runaway_0.0.5_iphoneos-arm.deb
+Size: 18830
+MD5sum: ffeaa570daaa1756553023be55a3c09b
+SHA1: 54ad4390dbfcadcc86798f70f224aa9fe9259081
+SHA256: 417f91c03b1a648120d125ffb84ac8e6aa9241d8778b59769f4a94a83f5b555c
+Section: Tweaks
+Description: Show network speed in status bar (iOS 13+ only).
+Author: ned
+Name: Runaway
+
 Package: it.ned.runawaylite
 Version: 0.0.1
 Architecture: iphoneos-arm
