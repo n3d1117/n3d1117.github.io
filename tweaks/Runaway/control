@@ -1,7 +1,7 @@
 Package: it.ned.runaway
 Name: Runaway
 Depends: mobilesubstrate, firmware (>= 13.0), preferenceloader
-Version: 0.0.4
+Version: 0.0.5
 Architecture: iphoneos-arm
 Description: Show network speed in status bar (iOS 13+ only).
 Maintainer: ned
