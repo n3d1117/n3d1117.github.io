@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>runawayprefs</string>
+	<string>RunawayPrefs</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.sarahh12099.runawayprefs</string>
 	<key>CFBundleInfoDictionaryVersion</key>

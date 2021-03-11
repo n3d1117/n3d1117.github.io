@@ -1,6 +1,9 @@
 #import <LocalAuthentication/LocalAuthentication.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <ifaddrs.h>
 #import <net/if.h>
+#import "Tweak.h"
 
 // ___________________________________________________________________________________
 
@@ -24,7 +27,7 @@ CGFloat refreshInterval;
 /* Utils */
 
 static BOOL hasDeviceNotch() {
-	if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)) {
+	if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
 		return NO;
 	} else {
 		LAContext* context = [[LAContext alloc] init];
@@ -209,14 +212,6 @@ static NSMutableAttributedString* formattedAttributedString() {
 
 /* Status bar hooks */
 
-@interface _UIStatusBarStringView: UILabel
-@property (nonatomic) NSInteger numberOfLines;
-@property (nonatomic) NSTextAlignment textAlignment;
-@property (nullable, nonatomic, copy) NSAttributedString* attributedText;
-@property(nonatomic) BOOL adjustsFontSizeToFitWidth;
--(void)setText:(NSString*)arg1;
-@end
-
 %hook _UIStatusBarStringView
 
 // prevent weird resizes
@@ -266,12 +261,9 @@ static NSMutableAttributedString* formattedAttributedString() {
 
 /* Resize pill view when in hotspot/call to fit text */
 
-@interface _UIStatusBarPillView: UIView
-@property (copy) CALayer* pulseLayer;
-@end
+%group gNotchFixes
 
 %hook _UIStatusBarPillView
-
 - (void)setCenter:(CGPoint)point {
 	if (enabled) {
 		point.y = 19.3;
@@ -280,14 +272,9 @@ static NSMutableAttributedString* formattedAttributedString() {
 	}
 	%orig(point);
 }
-
 %end
 
-@interface _UIStatusBarRoundedCornerView: UIView
-@end
-
 %hook _UIStatusBarRoundedCornerView
-
 - (void)setCenter:(CGPoint)point {
 	if (enabled) {
 		point.y = 19.3;
@@ -295,6 +282,7 @@ static NSMutableAttributedString* formattedAttributedString() {
 	}
 	%orig(point);
 }
+%end
 
 %end
 
@@ -367,6 +355,7 @@ void initPrefs() {
 			}
 
 			if (hasDeviceNotch()) {
+				%init(gNotchFixes);
 				attributes1 = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize: fontSize1] };
 				if (usesMonospacedFont) {
 					attributes2 = @{ NSFontAttributeName: [UIFont monospacedDigitSystemFontOfSize: fontSize2 weight: UIFontWeightRegular] };	
@@ -389,6 +378,7 @@ void initPrefs() {
 					cachedAttributedString = formattedAttributedString();
 				}
 			}];
+			%init(_ungrouped);
 			
 		}
 	}
