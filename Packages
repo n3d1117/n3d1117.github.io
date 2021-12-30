@@ -222,6 +222,22 @@ Description: Fix various iOS 14 annoyances: system wide black keyboard, hide 'No
 Author: ned
 Name: OutOfSight14
 
+Package: it.ned.outofsight14
+Version: 0.0.2
+Architecture: iphoneos-arm
+Maintainer: ned
+Installed-Size: 216
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/it.ned.outofsight14_0.0.2_iphoneos-arm.deb
+Size: 6576
+MD5sum: e0b71d6864231ac7683f373897a15fc1
+SHA1: 4b8b8f7775e530c32faf6b944ce3490372aaa3db
+SHA256: c0d194778d74d54ed9cd24da4c4e16530d6ccda55d1823c8740633ffa2d54b9d
+Section: Tweaks
+Description: Fix various iOS 14 annoyances: system wide black keyboard, hide 'No older notifications' text, hide DND notification, Hide 'Swipe up to open', hide page dots in lockscreen, show battery percentage on notched devices, hide control center grabber in LS, hide camera/flashlight in LS, hide home grabber in LS, hide status bar breadcrumbs, hide text suggestions in spotlight search, disable app library, remove search bar from widgets page
+Author: ned
+Name: OutOfSight14
+
 Package: it.ned.runaway
 Version: 0.0.1
 Architecture: iphoneos-arm

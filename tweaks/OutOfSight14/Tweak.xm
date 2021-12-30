@@ -63,11 +63,6 @@
 +(bool)_shouldAddBreadcrumbToActivatingSceneEntity:(id)arg1 sceneHandle:(id)arg2 withTransitionContext:(id)arg3 { return NO; }
 %end
 
-/* Hide text suggestions in spotlight search */
-%hook SPUISearchHeader
--(bool)offersCompletions { return NO; }
-%end
-
 /* Disable App Library */
 %hook SBIconController
 -(BOOL)isAppLibrarySupported { return NO; }
