@@ -73,3 +73,8 @@
 -(void)_setUpSearchBar {}
 -(void)_beginRequiringSearchBarPortalViewForReason:(id)arg1 {}
 %end
+
+/* Thiccer LS font size - goes well with Compactor tweak - thanks to @insan1d */
+%hook SBFLockScreenDateView
++(UIFont *)timeFont { return [UIFont systemFontOfSize:80 weight:UIFontWeightLight]; }
+%end
