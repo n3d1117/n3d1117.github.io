@@ -1,24 +1,43 @@
-#import <Foundation/Foundation.h>
+/* Source: https://gist.github.com/level3tjg/813f7269a405b00203484382da18d3bf */
+/* Credits: level3tjg */
 
-%hook SSDevice
--(NSString*)thinnedApplicationVariantIdentifier {
-    return @"i386";
+#import <MobileGestalt/MobileGestalt.h>
+
+NSString *deviceClass;
+
+%hook XDCDevice
+- (NSString *)productType {
+    return deviceClass;
 }
 %end
 
-/*
+%hook Device
+- (NSArray<NSString *> *)productVariants {
+    return @[ deviceClass ];
+}
+%end
 
-# Objc runtime alternative
+%hook SSDevice
+- (NSString *)productType {
+    return deviceClass;
+}
+- (NSString *)compatibleProductType {
+    return deviceClass;
+}
+%end
 
-#import <objc/runtime.h>
+%hook AMSDevice
++ (NSString *)productType {
+    return deviceClass;
+}
++ (NSString *)compatibleProductType {
+    return deviceClass;
+}
++ (NSString *)_lib_compatibleProductType {
+    return deviceClass;
+}
+%end
 
 %ctor {
-    Method originalMethod = class_getInstanceMethod(objc_getClass("SSDevice"), @selector(thinnedApplicationVariantIdentifier));
-    if (originalMethod != NULL) {
-        IMP newImp = imp_implementationWithBlock(^ {
-            return @"i386";
-        });
-        method_setImplementation(originalMethod, newImp);
-    }
+    deviceClass = (__bridge NSString *)MGCopyAnswer(kMGDeviceClass, NULL);
 }
-*/
